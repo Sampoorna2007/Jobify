@@ -5,7 +5,10 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const jobRoutes = require("./routes/jobRoutes");
 const applicationRoutes = require("./routes/applicationRoutes");
+const adminRoutes = require("./routes/adminRoutes");
+
 const errorHandler = require("./middleware/errorMiddleware");
+
 const morgan = require("morgan");
 
 dotenv.config();
@@ -24,7 +27,7 @@ app.use("/api/jobs", jobRoutes);
 
 app.use("/api/applications", applicationRoutes);
 
-// app.use("/api/admin", adminRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.use(errorHandler);
 

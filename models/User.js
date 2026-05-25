@@ -24,6 +24,11 @@ const userSchema = new mongoose.Schema(
         default: "jobseeker"
     },
 
+    isBlocked: {
+    type: Boolean,
+    default: false
+    },
+
     skills: [{
         type: String
     }],
