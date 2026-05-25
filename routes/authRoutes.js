@@ -7,9 +7,19 @@ const {
     loginUser
 } = require("../controllers/authController");
 
+const {
+    registerValidation,
+    validate
+} = require("../middleware/validationMiddleware");
+
 
 // REGISTER
-router.post("/register", registerUser);
+router.post(
+    "/register",
+    registerValidation,
+    validate,
+    registerUser
+);
 
 // LOGIN
 router.post("/login", loginUser);
